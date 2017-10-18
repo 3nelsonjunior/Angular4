@@ -5,13 +5,17 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
-import { PainelComponent } from './painel/painel.component'; //criado durante a aula
+import { PainelComponent } from './painel/painel.component';
+import { TentativasComponent } from './tentativas/tentativas.component';
+import { ProgressoComponent } from './progresso/progresso.component'; //criado durante a aula
 
 @NgModule({
   declarations: [
     AppComponent,
     TopoComponent,
-    PainelComponent, //criado durante a aula
+    PainelComponent,
+    TentativasComponent,
+    ProgressoComponent, //criado durante a aula
   ],
   imports: [
     BrowserModule,

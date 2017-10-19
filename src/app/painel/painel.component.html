@@ -21,8 +21,10 @@
         <div class="row">
             <!-- Utilizando uma unica coluna na row -->
             <div class="col">
-                <h6>Traduza a frase:</h6>
-                <p>How are you???</p>
+                <!-- Recuperando a frase por string interpolation, para ser controlado pela classe do component(ts) -->
+                <h6>{{ instrucao }}</h6>
+                <!-- Recuperando a frase por string interpolation, para ser controlado pela classe do component(ts) -->
+                <p>{{ frases[0].fraseEng }}</p>
                 <!-- form de edição de texto -->
                 <div class="form-group">
                     <textarea class="form-control"  rows="3"></textarea>

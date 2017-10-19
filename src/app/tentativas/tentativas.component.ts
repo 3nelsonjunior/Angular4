@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TentativasComponent implements OnInit {
 
+  /*  property binding - atributo do HTML controlado pela classe */
+  public coracaoVazio: string = '/assets/coracao_vazio.png'
+  public coracaoCheio: string = '/assets/coracao_cheio.png'
+  
+  
   constructor() { }
 
   ngOnInit() {

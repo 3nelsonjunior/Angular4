@@ -1,0 +1,10 @@
+/* barra completa */
+.progress{
+    background: #EEF8DA; /* fundo da barra de progresso */
+    border: solid 1px #99CE28; /* borda */
+}
+
+/* prrogresso da barra */
+.progress-bar{
+    background: #99CE28;
+}

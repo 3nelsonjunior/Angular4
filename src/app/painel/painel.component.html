@@ -1,5 +1,38 @@
-<p>
-  Esse é o componente Painel!!!
-</p>
-<app-progresso></app-progresso>
-<app-tentativas></app-tentativas>
+<div class="container">
+    <!-- colocando um fundo cinza -->
+    <div class="jumbotron">
+        <!-- Dividindo o  jumbotron em 3 linhas (1/3)-->
+        <div class="row">
+            <!-- Dividindo a row em 2 colunas (1/2)-->
+            <div class="col-sm-6">
+                <!-- chamando componente progresso-->
+                <app-progresso></app-progresso>
+            </div>
+            <!-- Dividindo a row em 2 colunas (2/2)-->
+            <div class="col-sm-6">
+                <!-- chamando componente tentativas-->    
+                <app-tentativas></app-tentativas>
+            </div>
+        </div>
+        <!-- Dividindo o  jumbotron em 3 linhas (2/3)-->
+        <div class="row">
+            <!-- Utilizando uma unica coluna na row -->
+            <div class="col">
+                <h6>Traduza a frase:</h6>
+                <p>How Are you???</p>
+                <div class="form-group">
+                    <textarea class="form-control"  rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- Dividindo o  jumbotron em 3 linhas (3/3)-->
+        <div class="row">
+            <!-- Utilizando uma unica coluna na row -->
+            <div class="col">
+                    <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-primary"> Verificar </button>    
+                    </div>
+            </div>              
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+.jumbotron{
+    margin-top: 20px; /* Espaçamento parte de cima do componente jumbotron*/
+    padding-top: 30px; /* diminuindo tamanha do jumbotron - topo*/
+    padding-bottom: 30px; /* diminuindo tamanha do jumbotron - debaixo*/
+}

@@ -27,7 +27,11 @@
                 <p>{{ frases[0].fraseEng }}</p>
                 <!-- form de edição de texto -->
                 <div class="form-group">
-                    <textarea class="form-control"  rows="3"></textarea>
+                    <textarea 
+                        class="form-control"  
+                        rows="3" 
+                        (input)="atualizaResposta()">
+                    </textarea>
                 </div>
             </div>
         </div>

@@ -17,4 +17,9 @@ export class PainelComponent implements OnInit {
   ngOnInit() {
   }
 
+  //função para evento ao digitar no textarea
+  public atualizaResposta(): void{
+    console.log('teste')
+  }
+
 }

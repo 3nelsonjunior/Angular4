@@ -8,7 +8,7 @@ export class Coracao{
     }
 
     //verifica o booleano se é falso ou vazio pra carregar a imagem
-    public existeCoracao(): string{
+    public exibeCoracao(): string{
         if(this.cheio){
             return this.urlCoracaoCheio
         } else {

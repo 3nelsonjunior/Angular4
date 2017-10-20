@@ -1,4 +1,10 @@
-<!-- [src] dentro de cochetes para ativar o property binding-->
+<!-- [src] dentro de cochetes para ativar o property binding
 <img [src]="coracaoCheio" />
 <img [src]="coracaoCheio" />
 <img [src]="coracaoCheio" />
+-->
+
+<!--  Diretiva
+    declara a variavel coracao(referenciado a classe coracoes objeto(s) Coracao no componente) que será uma variavel do array coracoes
+-->
+<img *ngFor="let coracao of coracoes" [src] ="coracao.exibeCoracao()" />

@@ -31,7 +31,9 @@
                     <textarea 
                         class="form-control"  
                         rows="3" 
-                        (input)="atualizaResposta($event)"></textarea>
+                        (input)="atualizaResposta($event)"
+                        [value]="resposta"> <!-- two-way data binding para limpar o textarea conforme definido no component(ts) -->
+                    </textarea>
                 </div>
             </div>
         </div>

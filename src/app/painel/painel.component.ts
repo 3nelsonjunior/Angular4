@@ -11,7 +11,7 @@ export class PainelComponent implements OnInit {
 
   public frases: Frase[] = FRASES
   public instrucao: string = 'Traduza a frase: '
-  public resposta: string
+  public resposta: string = '' //para o text area inciar vazio
 
   //variaver para armazenar a rodada atual
   public rodada: number = 0;
@@ -22,8 +22,8 @@ export class PainelComponent implements OnInit {
 
   constructor() { 
     //inicializando objeto com a primeira frase
-    this.rodadaFrase = this.frases[this.rodada]    
-    console.log(this.rodadaFrase)
+    this.atualizaRodada()
+    //console.log(this.rodadaFrase)
   }
 
   ngOnInit() {
@@ -47,10 +47,21 @@ export class PainelComponent implements OnInit {
       this.progresso = this.progresso + (100 / this.frases.length)   // porcentagem / de acordo com numero de resposta total       
             
       //atualiza o objeto rodada frase
-      this.rodadaFrase = this.frases[this.rodada] 
+      this.atualizaRodada()
+
+      
 
     } else{
       alert('Tradução INCORRETA!!!')
     }
+  }
+
+  public atualizaRodada(): void{
+    //define a frase da rodada com base e alguma lógica
+    this.rodadaFrase = this.frases[this.rodada]
+    //limpar a resposta
+    // no HTML esta definido o [value] como two-way data binding 
+    this.resposta = ''
+    
   }
 }

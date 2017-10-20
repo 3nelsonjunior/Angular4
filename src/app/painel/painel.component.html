@@ -24,13 +24,13 @@
                 <!-- Recuperando a frase por string interpolation, para ser controlado pela classe do component(ts) -->
                 <h6>{{ instrucao }}</h6>
                 <!-- Recuperando a frase por string interpolation, para ser controlado pela classe do component(ts) -->
-                <p>{{ frases[0].fraseEng }}</p>
+                <p>{{ rodadaFrase.fraseEng }}</p>
                 <!-- form de edição de texto -->
                 <div class="form-group">
                     <textarea 
                         class="form-control"  
                         rows="3" 
-                        (input)="atualizaResposta()">
+                        (input)="atualizaResposta($event)">
                     </textarea>
                 </div>
             </div>

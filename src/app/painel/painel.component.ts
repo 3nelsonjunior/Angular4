@@ -30,10 +30,24 @@ export class PainelComponent implements OnInit {
   //função para evento ao digitar no textarea
   public atualizaResposta(resposta: Event): void{
     // event binding - pegando dados do HTML via entrada de dados do usuario
-    console.log((<HTMLInputElement>resposta.target).value)
+    this.resposta = (<HTMLInputElement>resposta.target).value
     console.log(this.resposta)
   }
 
-  
-
+  //verificar resposta
+  public verificarResposta(): void{
+    
+    if(this.rodadaFrase.frasePtBr == this.resposta){
+      alert('Tradução CORRETA!!!')
+      //troca pergunta da rodada
+      this.rodada++;
+      console.log(this.rodada)
+      
+      //atualiza o objeto rodada frase
+      this.rodadaFrase = this.frases[this.rodada] 
+      console.log(this.rodadaFrase)
+    } else{
+      alert('Tradução INCORRETA!!!')
+    }
+  }
 }

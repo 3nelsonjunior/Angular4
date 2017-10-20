@@ -18,6 +18,8 @@ export class PainelComponent implements OnInit {
   //variavel para armazenar Frase atual
   public rodadaFrase: Frase
 
+  public progresso: number = 0
+
   constructor() { 
     //inicializando objeto com a primeira frase
     this.rodadaFrase = this.frases[this.rodada]    
@@ -31,7 +33,6 @@ export class PainelComponent implements OnInit {
   public atualizaResposta(resposta: Event): void{
     // event binding - pegando dados do HTML via entrada de dados do usuario
     this.resposta = (<HTMLInputElement>resposta.target).value
-    console.log(this.resposta)
   }
 
   //verificar resposta
@@ -41,11 +42,13 @@ export class PainelComponent implements OnInit {
       alert('Tradução CORRETA!!!')
       //troca pergunta da rodada
       this.rodada++;
-      console.log(this.rodada)
-      
+
+      //progresso
+      this.progresso = this.progresso + (100 / this.frases.length)   // porcentagem / de acordo com numero de resposta total       
+            
       //atualiza o objeto rodada frase
       this.rodadaFrase = this.frases[this.rodada] 
-      console.log(this.rodadaFrase)
+
     } else{
       alert('Tradução INCORRETA!!!')
     }

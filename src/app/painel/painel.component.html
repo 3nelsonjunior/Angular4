@@ -6,7 +6,8 @@
             <!-- Dividindo a row em 2 colunas (1/2)-->
             <div class="col-sm-6">
                 <!-- chamando componente progresso-->
-                <app-progresso></app-progresso>
+                <!-- definindo para ser possivel enviar valores do componente pai(painel) para o filho(progresso) via property binding -->
+                <app-progresso [progresso] = "progresso"></app-progresso>
             </div>
             <!-- Dividindo a row em 2 colunas (2/2)-->
             <div class="col-sm-6">

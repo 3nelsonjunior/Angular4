@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {Frase} from '../shared/frase.model'
 import { FRASES } from './frases-mock'
 
@@ -21,6 +21,9 @@ export class PainelComponent implements OnInit {
   public progresso: number = 0
 
   public tentativas: number = 3
+
+  // decorando atributo com Output, para componente pai ter acesso
+  @Output()public encerrarJogo: EventEmitter<string> = new EventEmitter()
 
   constructor() { 
     //inicializando objeto com a primeira frase
@@ -47,24 +50,21 @@ export class PainelComponent implements OnInit {
       //progresso
       this.progresso = this.progresso + (100 / this.frases.length)   // porcentagem / de acordo com numero de resposta total       
             
-      // Alerta informando que concluiu o jogo
+      // JOGO CONCLUÍDO COM VITÓRIA
       if(this.rodada == 4){
-        alert('Traduções concluídas com sucesso!!!')
-      }
-      
+        this.encerrarJogo.emit('vitoria')      
+      }    
       
       //atualiza o objeto rodada frase
       this.atualizaRodada()
-
-      
 
     } else{
       // diminuir a variavel tentativa
       this.tentativas--
 
-
+      // JOGO CONCLUÍDO COM DERROTA
       if(this.tentativas == -1){
-        alert('Você perdeu!!!')
+        this.encerrarJogo.emit('derrota')
       }
     }
   }

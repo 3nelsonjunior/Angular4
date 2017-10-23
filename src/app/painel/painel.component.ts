@@ -41,22 +41,24 @@ export class PainelComponent implements OnInit {
   public verificarResposta(): void{
     
     if(this.rodadaFrase.frasePtBr == this.resposta){
-      alert('Tradução CORRETA!!!')
       //troca pergunta da rodada
       this.rodada++;
 
       //progresso
       this.progresso = this.progresso + (100 / this.frases.length)   // porcentagem / de acordo com numero de resposta total       
             
+      // Alerta informando que concluiu o jogo
+      if(this.rodada == 4){
+        alert('Traduções concluídas com sucesso!!!')
+      }
+      
+      
       //atualiza o objeto rodada frase
       this.atualizaRodada()
 
       
 
     } else{
-      if(this.tentativas > 0){
-        alert('Tente novamente!!!')
-      }
       // diminuir a variavel tentativa
       this.tentativas--
 

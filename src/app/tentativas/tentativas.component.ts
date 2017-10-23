@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 
 import { Coracao } from '../shared/coracao.model'
 
@@ -7,7 +7,7 @@ import { Coracao } from '../shared/coracao.model'
   templateUrl: './tentativas.component.html',
   styleUrls: ['./tentativas.component.css']
 })
-export class TentativasComponent implements OnInit {
+export class TentativasComponent implements OnInit, OnChanges {
 
   
   @Input()public tentativas: number
@@ -24,9 +24,17 @@ export class TentativasComponent implements OnInit {
     
   }
 
-  //método do clico de vida do componente
-  ngOnInit() {
+
+  //método do clico de vida do componente]
+  /* Executado durante o processo de decoração dos valores recebidos do compenentes pai para o filho,
+     ou seja, no momento de input dos dados, ao alterar valores dos métodos, ele tbm é
+     alterado*/ 
+  ngOnChanges(){
     console.log('tentativas recebida do painel.: ', this.tentativas)
+  }
+
+  ngOnInit() {
+    
   }
 
 }

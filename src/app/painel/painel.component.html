@@ -13,8 +13,9 @@
             <div class="col-sm-6">
                 <!-- Alinhando a direita(end) -->
                 <div class="d-flex justify-content-end">
-                    <!-- chamando componente tentativas-->    
-                <app-tentativas></app-tentativas>
+                    <!-- chamando componente tentativas--> 
+                    <!-- definindo para ser possivel enviar valores do componente pai(painel) para o filho(tentativa) via property binding -->   
+                <app-tentativas [tentativas] = "tentativas"></app-tentativas>
                 </div>
             </div>
         </div>

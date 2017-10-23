@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Coracao } from '../shared/coracao.model'
 
@@ -9,10 +9,9 @@ import { Coracao } from '../shared/coracao.model'
 })
 export class TentativasComponent implements OnInit {
 
-  /*  property binding - atributo do HTML controlado pela classe */
-  public coracaoVazio: string = '/assets/coracao_vazio.png'
-  public coracaoCheio: string = '/assets/coracao_cheio.png'
   
+  @Input()public tentativas: number
+
   //atributo coracoes, será um array de corações
   public coracoes: Coracao[] = [
     new Coracao(true),
@@ -22,9 +21,12 @@ export class TentativasComponent implements OnInit {
   
   constructor() { 
     console.log(this.coracoes)
+    
   }
 
+  //método do clico de vida do componente
   ngOnInit() {
+    console.log('tentativas recebida do painel.: ', this.tentativas)
   }
 
 }

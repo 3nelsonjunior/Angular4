@@ -20,6 +20,8 @@ export class PainelComponent implements OnInit {
 
   public progresso: number = 0
 
+  public tentativas: number = 3
+
   constructor() { 
     //inicializando objeto com a primeira frase
     this.atualizaRodada()
@@ -52,7 +54,15 @@ export class PainelComponent implements OnInit {
       
 
     } else{
-      alert('Tradução INCORRETA!!!')
+      if(this.tentativas != 0){
+        alert('Tente novamente!!!')
+      }
+      // diminuir a variavel tentativa
+      this.tentativas--
+
+      if(this.tentativas == -1){
+        alert('Você perdeu!!!')
+      }
     }
   }
 

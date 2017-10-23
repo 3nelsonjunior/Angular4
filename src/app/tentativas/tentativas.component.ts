@@ -30,6 +30,12 @@ export class TentativasComponent implements OnInit, OnChanges {
      ou seja, no momento de input dos dados, ao alterar valores dos métodos, ele tbm é
      alterado*/ 
   ngOnChanges(){
+    //this.tentativas
+    //this.coracaoes.length
+    if(this.tentativas !== this.coracoes.length){
+      let indice = this.coracoes.length - this.tentativas
+      this.coracoes[indice - 1].cheio = false
+    }
     console.log('tentativas recebida do painel.: ', this.tentativas)
   }
 
